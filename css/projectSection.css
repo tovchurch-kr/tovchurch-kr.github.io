@@ -1,0 +1,253 @@
+/* 프로젝트 섹션 기본 스타일 */
+.projects {
+    padding: 120px 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 섹션 제목 스타일 오버라이드 (필요시) */
+.projects .section-title {
+    margin-bottom: 40px;
+}
+
+/* 필터 버튼 스타일 */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    color: var(--accent-color);
+}
+
+.filter-btn.active::after, .filter-btn:hover::after {
+    width: 50%;
+}
+
+/* 프로젝트 슬라이더 스타일 - 그림자 제거 */
+.project-slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* 배경 장식 제거 */
+}
+
+/* 배경 장식 제거 */
+.project-slider-container::before,
+.project-slider-container::after {
+    display: none;
+}
+
+.project-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 400px; /* 슬라이더 높이 고정 */
+}
+
+.project-slide {
+    min-width: 100%;
+    position: relative;
+    display: none; /* 초기에는 모든 슬라이드 숨김 */
+}
+
+.project-slide.active {
+    display: block; /* 활성화된 슬라이드만 표시 */
+}
+
+.project-slide-img-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0; /* 둥근 모서리 제거 */
+    box-shadow: none; /* 그림자 제거 */
+    background-color: #fff; /* 배경색을 흰색으로 */
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+}
+
+.project-slide-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* 비율 유지하면서 컨테이너 내에 전체 이미지 표시 */
+    transition: transform 0.5s ease;
+}
+
+/* 이미지 호버 효과 조정 */
+.project-slide:hover .project-slide-img {
+    transform: scale(1.05); /* 확대 효과 */
+}
+
+.project-slide-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95); /* 투명도 있는 흰색 배경 */
+    transition: transform 0.3s ease;
+}
+
+.project-slide-info h3 {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.project-slide-info p {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+/* 슬라이더 컨트롤 */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.slider-btn {
+    background: white;
+    color: var(--dark-color);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.slider-btn:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.slider-btn.prev {
+    margin-right: 20px;
+}
+
+.slider-btn.next {
+    margin-left: 20px;
+}
+
+.slider-btn i {
+    font-size: 1rem;
+}
+
+.slider-pagination {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pagination-dot.active {
+    background: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.pagination-dot:hover {
+    background: #ccc;
+    transform: scale(1.1);
+}
+
+/* 로딩 인디케이터 (선택 사항) */
+.slider-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.slider-loading.visible {
+    display: block;
+}
+
+.slider-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(231, 76, 60, 0.2);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 프로젝트 슬라이더 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-slide.active {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* 이미지 없음 메시지 스타일 */
+.no-projects {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    background-color: #fff; /* 배경색을 흰색으로 변경 */
+    border-radius: 0; /* 둥근 모서리 제거 */
+}

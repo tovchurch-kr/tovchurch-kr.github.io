@@ -1,0 +1,180 @@
+/* 문의하기 섹션 (개선된 버전) */
+.contact {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #fff 0%, var(--light-color) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: var(--accent-color);
+    opacity: 0.03;
+    border-radius: 50%;
+    transform: translate(100px, -150px);
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.info-text {
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* .info-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+} */
+
+.info-text h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    background: var(--light-color);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    margin-top: 3px;
+    margin-right: 15px;
+    width: 20px;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.info-item:hover i {
+    transform: scale(1.2);
+}
+
+.kakao-item {
+    grid-column: span 2;
+}
+
+.kakao-item i {
+    color: #FFEB3B;
+}
+
+.contact-map {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-placeholder {
+    flex: 1;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.map-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* 주소 정보 스타일 */
+.contact-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.address-icon {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.address-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.address-info p {
+    color: var(--gray-color);
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}

@@ -1,0 +1,83 @@
+/* 전문가 소개 섹션 */
+.team {
+    padding: 120px 0;
+    background: var(--light-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.team-member {
+    text-align: center;
+    padding: 20px 15px 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(231, 76, 60, 0.15);
+}
+
+.member-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 25px auto;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 5px solid white;
+    transition: var(--transition);
+}
+
+.member-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.team-member:hover .member-image {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.25);
+}
+
+.team-member h3 {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.team-member .position {
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    background: var(--accent-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.team-member p {
+    color: var(--gray-color);
+    font-size: 0.95rem;
+    padding: 0 10px;
+    line-height: 1.6;
+}
