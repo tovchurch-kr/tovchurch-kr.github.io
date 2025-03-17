@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토브종합건축</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/heroSection.css">
+    <link rel="stylesheet" href="css/introSection.css">
+    <link rel="stylesheet" href="css/projectSection.css">
+    <link rel="stylesheet" href="css/expertSection.css">
+    <link rel="stylesheet" href="css/contactSection.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <!-- <svg class="logo-icon" width="35" height="35" viewBox="0 0 100 100">
+                        <path d="M20,90 L20,40 L50,20 L80,40 L80,90" fill="none" stroke="#e74c3c" stroke-width="8"/>
+                        <path d="M35,44 L65,44" stroke="#e74c3c" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M50,44 L50,84" stroke="#e74c3c" stroke-width="8" stroke-linecap="round"/>
+                    </svg> -->
+                    <div class="logo-text">
+                        <h1>TOV</h1>
+                        <span>ARCHITECTURE</span>
+                    </div>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">홈</a></li>
+                    <li><a href="#about">소개</a></li>
+                    <li><a href="#projects">프로젝트</a></li>
+                    <li><a href="#team">전문가</a></li>
+                    <li><a href="#contact">문의</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 히어로 섹션 -->
+    <section id="home" class="hero">
+        <!-- 부유하는 도형 효과 -->
+        <div class="hero-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1>SPACE<br><span class="highlight-block">INNOVATION</span></h1>
+            <p>토브 종합건축은 공간의 새로운 가치를 창조합니다</p>
+            <a href="#projects" class="btn">프로젝트 보기</a>
+        </div>
+        
+        <!-- 스크롤 다운 인디케이터 -->
+        <!-- <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <div class="chevron"></div>
+            </div>
+        </div> -->
+    </section>
+
+    <!-- 회사 소개 섹션 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">소개</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>저희는 <span class="highlight">공간</span>을 디자인합니다</h3>
+                    <p>토브 종합건축은 1995년 설립 이래, 수십 년의 전문성으로 고객 요구사항에 완벽히 부합하는 건축 솔루션을 제공합니다. 각 프로젝트의 특성과 고객의 비전을 이해하여 혁신적이고 지속 가능한 건축을 실현합니다.</p>
+                    <p>숙련된 전문가로 구성된 저희 팀은 주거용, 상업용, 공공 건물 등 다양한 프로젝트를 수행하고 있습니다.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="토브 건축 프로젝트">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">프로젝트</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="residential">주거</button>
+                <button class="filter-btn" data-filter="commercial">상업</button>
+                <button class="filter-btn" data-filter="public">공공</button>
+            </div>
+            
+            <div class="project-slider-container">
+                <div class="project-slider">
+                    <!-- 슬라이더 내용은 JavaScript로 동적 생성됩니다 -->
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-pagination"></div>
+                    <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 전문가 소개 섹션 -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">전문가 소개</h2>
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="images/team1.jpg" alt="박해일">
+                    </div>
+                    <h3>박해일</h3>
+                    <p class="position">건축 설계 디렉터</p>
+                    <p>15년 경력의 건축 설계 전문가로 주거 및 상업 공간 프로젝트를 이끌고 있습니다.</p>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="images/team2.jpg" alt="이주빈">
+                    </div>
+                    <h3>이주빈</h3>
+                    <p class="position">인테리어 디자이너</p>
+                    <p>공간의 미학적 요소와 기능성을 결합한 혁신적인 인테리어 디자인을 선보입니다.</p>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="images/team3.jpg" alt="이준혁">
+                    </div>
+                    <h3>이준혁</h3>
+                    <p class="position">도시 계획 전문가</p>
+                    <p>지속 가능한 도시 환경을 위한 계획 및 설계 솔루션을 제공합니다.</p>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="images/team4.jpg" alt="황우슬혜">
+                    </div>
+                    <h3>황우슬혜</h3>
+                    <p class="position">조경 디자이너</p>
+                    <p>자연과 건축의 조화로운 결합을 통해 독특한 외부 공간을 창조합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의하기 섹션 (개선된 버전) -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">문의하기</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-text">
+                        <h3>프로젝트를 함께 시작하세요</h3>
+                        <p>당신의 아이디어를 현실로 만들어 드립니다.</p>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>010-1234-5678</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@tov-architecture.com</p>
+                        </div>
+                        <div class="info-item kakao-item">
+                            <i class="fas fa-comment"></i>
+                            <div>
+                                <p>카카오톡 ID: tov_architecture</p>
+                                <p class="kakao-desc">24시간 내에 답변 드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>오시는 길</p>
+                    </div>
+                    <div class="contact-address">
+                        <div class="address-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="address-info">
+                            <h4>오시는 길</h4>
+                            <p>서울특별시 강남구 테헤란로 123</p>
+                            <p>지하철 2호선 강남역 3번 출구에서 도보 5분</p>
+                            <p>주차공간 이용 가능</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <h3>TOV</h3>
+                        <span>ARCHITECTURE</span>
+                    </div>
+                    <div class="company-info">
+                        <p>사업자등록번호: 123-45-67890</p>
+                        <p>대표자: 홍길동</p>
+                        <p>서울특별시 강남구 테헤란로 123</p>
+                        <p>info@tov-architecture.com</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="#home">홈</a></li>
+                        <li><a href="#about">소개</a></li>
+                        <li><a href="#projects">프로젝트</a></li>
+                        <li><a href="#team">전문가</a></li>
+                        <li><a href="#contact">문의</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="footer-services">
+                    <h4>전문가</h4>
+                    <ul>
+                        <li>건축 설계 디렉터</li>
+                        <li>인테리어 디자이너</li>
+                        <li>도시 계획 전문가</li>
+                        <li>조경 디자이너</li>
+                    </ul>
+                </div> -->
+                <div class="footer-business-hours">
+                    <h4>업무 시간</h4>
+                    <div class="hours-info">
+                        <div class="hours-item">
+                            <i class="far fa-clock"></i>
+                            <div class="hours-text">
+                                <p>월요일 - 금요일</p>
+                                <p class="hours">09:00 - 17:00</p>
+                            </div>
+                        </div>
+                        <div class="hours-item">
+                            <i class="far fa-calendar-times"></i>
+                            <div class="hours-text">
+                                <p>토/일/공휴일</p>
+                                <p class="hours">휴무</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 토브종합건축. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="go-top-fixed">
+        <a href="#home"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>
