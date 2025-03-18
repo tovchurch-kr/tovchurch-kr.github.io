@@ -1,0 +1,173 @@
+/* 프로젝트 섹션 최적화 CSS - 즉시 로딩 방식 */
+.projects {
+    padding: 120px 0;
+    background: #fff;
+    position: relative;
+}
+
+/* 필터 버튼 최적화 */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    color: var(--accent-color);
+}
+
+.filter-btn.active::after, .filter-btn:hover::after {
+    width: 50%;
+}
+
+/* 프로젝트 슬라이더 컨테이너 */
+.project-slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* 슬라이더 기본 스타일 */
+.project-slider {
+    display: flex;
+    height: 400px;
+}
+
+/* 프로젝트 슬라이드 기본 스타일 - 모든 슬라이드 준비 */
+.project-slide {
+    min-width: 100%;
+    position: relative;
+    display: none; /* 기본적으로 모든 슬라이드 숨김 */
+    -webkit-backface-visibility: hidden; /* 사파리 렌더링 이슈 방지 */
+    backface-visibility: hidden;
+}
+
+/* 활성화된 슬라이드만 표시 (애니메이션 없이) */
+.project-slide.active {
+    display: block;
+}
+
+/* 프로젝트 이미지 컨테이너 */
+.project-slide-img-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+/* 프로젝트 이미지 */
+.project-slide-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+/* 이미지 호버 효과 유지 */
+.project-slide:hover .project-slide-img {
+    transform: scale(1.05);
+}
+
+/* 슬라이더 컨트롤 - 심플하게 유지 */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.slider-btn {
+    background: white;
+    color: var(--dark-color);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 2;
+}
+
+.slider-btn:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.slider-btn.prev {
+    margin-right: 20px;
+}
+
+.slider-btn.next {
+    margin-left: 20px;
+}
+
+/* 페이지네이션 */
+.slider-pagination {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-dot.active {
+    background: var(--accent-color);
+}
+
+.pagination-dot:hover {
+    background: #ccc;
+}
+
+/* 이미지 로딩 시 스켈레톤 효과 */
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* 이미지 스켈레톤 제거 - 모든 이미지를 미리 로드하므로 필요 없음 */
+.project-slide-img-container::before {
+    display: none;
+}

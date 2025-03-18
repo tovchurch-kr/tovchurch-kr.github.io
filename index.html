@@ -21,6 +21,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 사이트 로딩 인디케이터 (body 태그 시작 부분에 추가) -->
+    <div id="site-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <h1>TOV</h1>
+                <span>ARCHITECTURE</span>
+            </div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
     <!-- 헤더 및 네비게이션 -->
     <header>
         <div class="container">
@@ -107,12 +118,48 @@
             
             <div class="project-slider-container">
                 <div class="project-slider">
-                    <!-- 슬라이더 내용은 JavaScript로 동적 생성됩니다 -->
+                    <!-- 주거 프로젝트 슬라이드 -->
+                    <div class="project-slide residential active" data-category="residential">
+                        <div class="project-slide-img-container">
+                            <img src="images/residential/1.jpg" alt="주거 프로젝트 1" class="project-slide-img">
+                        </div>
+                    </div>
+                    <div class="project-slide residential" data-category="residential">
+                        <div class="project-slide-img-container">
+                            <img src="images/residential/2.jpg" alt="주거 프로젝트 2" class="project-slide-img">
+                        </div>
+                    </div>
+                    
+                    <!-- 상업 프로젝트 슬라이드 -->
+                    <div class="project-slide commercial" data-category="commercial">
+                        <div class="project-slide-img-container">
+                            <img src="images/commercial/1.jpg" alt="상업 프로젝트 1" class="project-slide-img">
+                        </div>
+                    </div>
+                    <div class="project-slide commercial" data-category="commercial">
+                        <div class="project-slide-img-container">
+                            <img src="images/commercial/2.jpg" alt="상업 프로젝트 2" class="project-slide-img">
+                        </div>
+                    </div>
+                    
+                    <!-- 공공 프로젝트 슬라이드 -->
+                    <div class="project-slide public" data-category="public">
+                        <div class="project-slide-img-container">
+                            <img src="images/public/1.jpg" alt="공공 프로젝트 1" class="project-slide-img">
+                        </div>
+                    </div>
+                    <div class="project-slide public" data-category="public">
+                        <div class="project-slide-img-container">
+                            <img src="images/public/2.jpg" alt="공공 프로젝트 2" class="project-slide-img">
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="slider-controls">
                     <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
-                    <div class="slider-pagination"></div>
+                    <div class="slider-pagination">
+                        <!-- 페이지네이션 도트는 자바스크립트로 동적 생성 -->
+                    </div>
                     <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
@@ -275,8 +322,7 @@
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
     <script src="js/hero.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="js/filter.js"></script>
     <script src="js/projects.js"></script>
+    <script src="js/gotop.js"></script>
 </body>
 </html>
